@@ -11,12 +11,21 @@ The SignaLink is the radio interface (audio + VOX PTT). Direwolf is the software
 | File | Purpose |
 | --- | --- |
 | [PROCEDURE.md](PROCEDURE.md) | Full install and first-QSO procedure |
+| [scripts/install-linpac.sh](scripts/install-linpac.sh) | Run on the Pi to install packages, write configs, and build Linpac |
 | [config/direwolf.conf.example](config/direwolf.conf.example) | Direwolf config template |
 | [config/axports.example](config/axports.example) | Linux AX.25 port template |
 | [scripts/start-stack.sh](scripts/start-stack.sh) | Start Direwolf, KISS, and AX.25 |
 | [scripts/stop-stack.sh](scripts/stop-stack.sh) | Tear the stack down |
 
-Copy the templates onto the Pi and replace `N0CALL` with your callsign before use.
+On the Pi (after Raspberry Pi OS Lite is installed and SSH works):
+
+```bash
+git clone https://github.com/buryd/Linpac_D700.git
+cd Linpac_D700
+bash scripts/install-linpac.sh --call N0CALL
+```
+
+Replace `N0CALL` with your callsign. The installer writes `ADEVICE` and `net.ifnames=0` into the correct files — do not type those at the shell.
 
 ## What you will need
 

@@ -82,13 +82,33 @@ In Raspberry Pi Imager:
 3. If that image gives you trouble later, use **Raspberry Pi OS (Legacy)** → **Lite (32-bit)** (Bookworm). Do not use Ubuntu or a desktop image.
 4. In Imager customization: hostname, username, Wi-Fi or Ethernet, locale, and **enable SSH**.
 
-Boot the Pi, SSH in, then:
+Boot the Pi, SSH in, then either run the installer (recommended) or follow the remaining sections by hand.
+
+**Installer (does sections 4–10):** clone this repo on the Pi and run:
 
 ```bash
 sudo apt update
 sudo apt full-upgrade -y
 sudo reboot
 ```
+
+After reboot:
+
+```bash
+git clone https://github.com/buryd/Linpac_D700.git
+cd Linpac_D700
+bash scripts/install-linpac.sh --call N0CALL
+```
+
+Replace `N0CALL` with your callsign. The script updates packages, adds `net.ifnames=0` to `cmdline.txt`, detects the SignaLink card name, writes `/etc/ax25/direwolf.conf` and `/etc/ax25/axports`, builds Linpac, and installs `start-stack.sh` / `stop-stack.sh`. Do **not** type `ADEVICE` or `net.ifnames=0` at the bash prompt.
+
+If the installer cannot see the SignaLink, plug it in and pass the card name from `arecord -l`:
+
+```bash
+bash scripts/install-linpac.sh --call N0CALL --card CODEC
+```
+
+Then continue from **section 11** (bring the stack up). The sections below are the same steps, written out for a manual install.
 
 Disable predictable network interface names. Long `enx…` names can crash Linpac and AX.25 utilities. On Trixie and Bookworm the file is `/boot/firmware/cmdline.txt` (older images used `/boot/cmdline.txt`). Append to the **single existing line**:
 
