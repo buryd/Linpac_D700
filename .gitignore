@@ -1,0 +1,16 @@
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editors
+*.swp
+*~
+.vscode/
+.idea/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key

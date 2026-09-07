@@ -1,0 +1,17 @@
+# Direwolf config for SignaLink USB + Kenwood TM-D700 (1200 baud)
+# Copy to /etc/ax25/direwolf.conf and replace N0CALL.
+
+# Identify the SignaLink with:  arecord -l   and   aplay -l
+# Typical names: Device, CODEC, Device_1. Use the card *name*, not a number
+# that can change when HDMI or Bluetooth audio appears.
+ADEVICE  plughw:Device,0
+ACHANNELS 1
+
+CHANNEL 0
+MYCALL N0CALL-1
+MODEM 1200
+
+# SignaLink keys the radio with VOX. Do not set a PTT line.
+
+AGWPORT 8000
+KISSPORT 8001

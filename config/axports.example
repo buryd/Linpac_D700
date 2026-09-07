@@ -1,0 +1,4 @@
+# /etc/ax25/axports
+# name     callsign    speed   paclen  window  description
+# speed is the KISS/PTY rate (not on-air baud). 19200 is conventional for Direwolf.
+vhf        N0CALL-1    19200   256     2       SignaLink USB / TM-D700 1200
