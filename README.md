@@ -10,6 +10,7 @@ The SignaLink is the radio interface (audio + VOX PTT). Direwolf is the software
 
 | File | Purpose |
 | --- | --- |
+| [INSTALL.md](INSTALL.md) | Commands to clone this repo on the Pi and run the installer |
 | [PROCEDURE.md](PROCEDURE.md) | Full install and first-QSO procedure |
 | [scripts/install-linpac.sh](scripts/install-linpac.sh) | Run on the Pi to install packages, write configs, and build Linpac |
 | [config/direwolf.conf.example](config/direwolf.conf.example) | Direwolf config template |
